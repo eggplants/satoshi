@@ -15,6 +15,6 @@ with open(csv_path, encoding='utf_8', errors='replace') as w:
 		except UnicodeDecodeError:
 			pass
 
-tweets = [re.sub(r'@[a-zA-Z0-9_]{1,15}\s*', '', t) for t in tweets]
+tweets = [re.sub(r'[@＠][a-zA-Z0-9_]{1,15}\s*', '', t) for t in tweets]
 tweets = [re.sub(url, '', t) for t in tweets]
 print("\n".join(tweets))
